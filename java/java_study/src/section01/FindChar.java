@@ -15,19 +15,25 @@ public class FindChar {
         * output : 2
         * */
 
-        System.out.println(solution("Computercooler", 'c'));
+        System.out.println("result : " + solution("Computercooler", 'c'));
 
     }
 
     public static int solution(String str, char c) {
+        // charAt() | toCharArray()
+
         int answer = 0;
         str = str.toUpperCase();
         c = Character.toUpperCase(c);
 
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == c) {
-                answer++;
-            }
+//        for (int i = 0; i < str.length(); i++) {
+//            if (str.charAt(i) == c) {
+//                answer++;
+//            }
+//        }
+
+        for (char ch : str.toCharArray()) {
+            if (ch == c) answer++;
         }
 
         return answer;
