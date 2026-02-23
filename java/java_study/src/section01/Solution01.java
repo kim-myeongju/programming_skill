@@ -1,6 +1,6 @@
 package section01;
 
-public class FindChar {
+public class Solution01 {
 
     public static void main(String[] args) {
 
