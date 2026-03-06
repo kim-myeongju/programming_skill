@@ -11,6 +11,9 @@ console.log(`result : ${solution(nums)}`);
 
 function solution(arr) {
     let answer, min = Number.MAX_SAFE_INTEGER;
+    
+    // 최솟값 구하는 내장함수 이용 : 파라미터로 정수만 가능하고 배열은 전개연산자(...arr)사용해서 넘기기
+    // let answer = Math.min(...arr);
 
     for(let i = 0;  i < arr.length; i++) {
         if(arr[i] < min) {
