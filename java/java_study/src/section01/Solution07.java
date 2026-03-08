@@ -16,13 +16,20 @@ public class Solution07 {
     }
 
     public static String solution(String str) {
-        str = str.toUpperCase();
-        int len = str.length();
+        // 1.
+//        str = str.toUpperCase();
+//        int len = str.length();
+//
+//        for (int i = 0; i < len / 2; i++) {
+//            if (str.charAt(i) != str.charAt(len - i - 1)) {
+//                return "NO";
+//            }
+//        }
 
-        for (int i = 0; i < len / 2; i++) {
-            if (str.charAt(i) != str.charAt(len - i - 1)) {
-                return "NO";
-            }
+        // 2.
+        String tmp = new StringBuilder(str).reverse().toString();
+        if (!str.equalsIgnoreCase(tmp)) {
+            return "NO";
         }
 
         return "YES";
