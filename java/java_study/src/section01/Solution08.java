@@ -18,7 +18,7 @@ public class Solution08 {
     }
 
     public static String solution(String str) {
-        // ^A-Z : A ~ Z 까지의 알파벳이 아니면 "" 빈문자화
+        // ^A-Z : A ~ Z 까지의 알파벳이 아니면 "" 빈문자화 (문자만 필터링)
         str = str.toUpperCase().replaceAll("[^A-Z]", "");
         int len = str.length();
 
