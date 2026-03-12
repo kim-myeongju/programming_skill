@@ -23,14 +23,21 @@ public class Solution09 {
 //        str = str.toLowerCase().replaceAll("[a-z]", "");
 //        answer = Integer.parseInt(str);
 
-        // 2. '0' ~ '9' : 48 ~ 57
+        // 2. ASCII code : '0' ~ '9' : 48 ~ 57
         char[] charArray = str.toCharArray();
+//        for (char c : charArray) {
+//            if (c >= 48 && c <= 57) {
+//                // 숫자 누적시키는 공식
+//                answer = answer * 10 + (c - 48);
+//            }
+//        }
+
+        // 3. 숫자 누적
+        String answerStr = "";
         for (char c : charArray) {
-            if (c >= 48 && c <= 57) {
-                // 숫자 누적시키는 공식
-                answer = answer * 10 + (c - 48);
-            }
+            if (Character.isDigit(c))  answerStr += c;
         }
+        answer = Integer.parseInt(answerStr);
 
         return answer;
     }
