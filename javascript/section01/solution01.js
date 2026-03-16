@@ -8,7 +8,7 @@ output : 5
 
 */
 
-// compile command -> node solution01.js
+// ** compile command -> node solution01.js  **
 
 function solution(a, b, c) {
     let answer;
