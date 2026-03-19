@@ -13,7 +13,7 @@ function solution(str) {
     let answer = "";
 
     for(let s of str) {
-        // 1. 전체바꿔버림
+        // 1. 전체 바꿔버림
         // answer += s.toUpperCase();
 
         // 2. 소문자 판별 후 변경
