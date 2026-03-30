@@ -20,7 +20,11 @@ public class Solution03 {
         int[] b = {1, 1, 2, 2, 3};
         int n = 5;
 
-        System.out.println("result : " + solution(n, a, b));
+//        System.out.println("result : " + solution(n, a, b));
+
+        for (char str : solution(n, a, b).toCharArray()) {
+            System.out.println(str);
+        }
 
     }
 
