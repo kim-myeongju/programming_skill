@@ -24,8 +24,8 @@ public class Solution08 {
         System.out.println();
     }
 
-    public static ArrayList<Integer> solution(int[] score) {
-        ArrayList<Integer> answer = new ArrayList<>();
+    public static int[] solution(int[] score) {
+        int[] answer = new int[score.length];
 
         for (int i = 0; i < score.length; i++) {
             // 1등부터 시작
@@ -35,7 +35,7 @@ public class Solution08 {
                     cnt++;
                 }
             }
-            answer.add(cnt);
+            answer[i] = cnt;
         }
 
         return answer;
