@@ -27,10 +27,11 @@ public class Solution10 {
                         {7, 2, 5, 3, 4},
                         {4, 3, 6, 4, 1},
                         {8, 7, 3, 5, 2}};
-        System.out.println("result : " + solution(arr));
+        System.out.println("result1 : " + solution1(arr));
+        System.out.println("result2 : " + solution2(arr));
     }
 
-    public static int solution(int[][] arr) {
+    public static int solution1(int[][] arr) {
         int answer = 0;
         // 상하좌우 방향
         int[] dx = {-1, 0, 1, 0};
@@ -41,16 +42,44 @@ public class Solution10 {
             for (int j = 0; j < n; j++) {
                 boolean flag = true;
 
-                for (int k = 0; k < n - 1; k++) {
-                    int nx = i + dx[k]; // 행
-                    int ny = j + dy[k]; // 열
-                    
-                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
+                // 상하좌우 4번 체크 (k < 4)
+                for (int k = 0; k < 4; k++) {
+                    int nx = i + dx[k]; // 해당 행의 상하좌우 포지션
+                    int ny = j + dy[k]; // 해당 열의 상하좌우 포지션
+
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < n &&
+                            arr[nx][ny] >= arr[i][j]) {
                         flag = false;
                         break;
                     }
                 }
 
+                if (flag) answer++;
+            }
+        }
+
+        return answer;
+    }
+
+    // 복습
+    public static int solution2(int[][] arr) {
+        int answer = 0;
+        int n = arr.length;
+        int[] dx = {-1, 0, 1, 0};
+        int[] dy = {0, 1, 0, -1};
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                boolean flag = true;
+                for (int k = 0; k < 4; k++) {
+                    int nx = i + dx[k];
+                    int ny = j + dy[k];
+
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
+                        flag = false;
+                        break;
+                    }
+                }
                 if (flag) answer++;
             }
         }
