@@ -13,7 +13,27 @@ let nums = [128, 460, 603, 40, 521, 137, 123];
 console.log(`result : ${solution(nums)}`);
 
 function solution(nums) {
-    let answer = 0;
+    let answer = 0, max = Number.MIN_SAFE_INTEGER;
+
+    for(let num of nums) {
+        let sum = 0, tmp = num; // 나중에 원본숫자(num)를 출력해야해서 임시변수(tmp)에 저장해서 활용
+
+        // tmp가 0이 되면 break
+        while(tmp) {
+            sum += tmp % 10;
+            tmp = Math.floor(tmp / 10);
+        }
+
+        // 원본숫자의 합 비교 변수 : sum, max
+        // 원본숫자 비교 변수 : answer, num
+        if(sum > max) {
+            max = sum;
+            answer = num;
+        } else if(sum === max) {
+            // 새로운값이랑 최대값이랑 같다면 원본숫자의 크기를 비교해서 큰 숫자를 저장
+            if(num > answer) answer = num;
+        }
+    }
 
     return answer;
 }
