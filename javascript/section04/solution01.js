@@ -10,9 +10,10 @@ output : 137
 */
 
 let nums = [128, 460, 603, 40, 521, 137, 123];
-console.log(`result : ${solution(nums)}`);
+console.log(`result01 : ${solution01(nums)}`);
+console.log(`result02 : ${solution02(nums)}`);
 
-function solution(nums) {
+function solution01(nums) {
     let answer = 0, max = Number.MIN_SAFE_INTEGER;
 
     for(let num of nums) {
@@ -31,6 +32,26 @@ function solution(nums) {
             answer = num;
         } else if(sum === max) {
             // 새로운값이랑 최대값이랑 같다면 원본숫자의 크기를 비교해서 큰 숫자를 저장
+            if(num > answer) answer = num;
+        }
+    }
+
+    return answer;
+}
+
+function solution02(nums) {
+    let answer = 0, max = Number.MIN_SAFE_INTEGER;
+
+    for(let num of nums) {
+        // toString() : 숫자를 문자열로 바꾸어서
+        // split('') : 문자배열로 만들어서
+        // reduce(콜백함수) : 원본숫자의 하나하나의 값(b)을 a에 누적(a는 0으로 초기화)
+        let sum = num.toString().split('').reduce((a, b) => a + Number(b), 0);
+        
+        if(sum > max) {
+            max = sum;
+            answer = num;
+        } else if(sum === max) {
             if(num > answer) answer = num;
         }
     }
