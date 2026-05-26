@@ -32,6 +32,8 @@ public class Solution05 {
         int answer = 0;
         // 내림차순 정렬 선언
         TreeSet<Integer> tSet = new TreeSet<>(Collections.reverseOrder());
+        // 오른차순 정렬
+//        TreeSet<Integer> tSet = new TreeSet<>();
 
         for (int i = 0; i < cards.length; i++) {
             for (int j = i + 1; j < cards.length; j++) {
@@ -40,6 +42,11 @@ public class Solution05 {
                 }
             }
         }
+
+//        tSet.remove(143);                       // 해당 값을 삭제
+//        System.out.println(tSet.size());            // 원소의 개수
+//        System.out.println("first : " + tSet.first());           // 오름차순 - 최소값, 내림차순 - 최대값
+//        System.out.println("last : " + tSet.last());
 
         int cnt = 0;
         for (int num : tSet) {
