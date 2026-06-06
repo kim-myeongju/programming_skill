@@ -17,7 +17,7 @@ public class Solution02 {
         *
         * */
 
-        System.out.println("result : " + solution("(A(BC)D)EF(G(H)(IJ)K)LM(N)"));
+        System.out.println("result : " + solution("(A(BC)D)EF(G(H)(IJ)K)LM(N)OP(Q)(RS(T))U"));
     }
 
     public static String solution(String str) {
